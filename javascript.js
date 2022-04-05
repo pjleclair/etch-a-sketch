@@ -10,14 +10,13 @@ function mkGrid (row,col) {
     }
 }
 
-function mOver (e) {
-    console.log(e);
+function mOver () {
+    console.log('test');
     this.classList.add('hovered');
 }
 
-function mOut (e) {
-    console.log(e);
-    if (e.propertyName !== 'transform') return;
+function mOut () {
+    console.log('test');
     this.classList.remove('hovered');
 }
 
@@ -25,13 +24,12 @@ const container = document.querySelector(".container-div");
 mkGrid(16,16);
 
 const squares = document.querySelectorAll(".grid-square");
-console.log(squares);
 squares.forEach(
     function(currentValue, currentIndex, listObj) {
-        console.log(squares[currentValue]);
-        squares.item(currentIndex).addEventListener('onmouseover', mOver);
+        squares.item(currentIndex).addEventListener("onmouseover", mOver);
     });
 squares.forEach(
     function(currentValue, currentIndex, listObj) {
-        squares.item(currentIndex).addEventListener('onmouseout', mOut);
+        squares.item(currentIndex).addEventListener("onmouseout", mOut);
     });
+
