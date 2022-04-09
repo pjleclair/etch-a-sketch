@@ -19,10 +19,12 @@ function wipeGrid (parentNode) {
 
 function runGame () {
     if (games>0) {
-        const container = document.querySelector(".container-div");
         wipeGrid(container);
     }
-    const grid = prompt('How large would you like your grid?');
+    let grid = prompt('How large would you like your grid?');
+    while (grid > 100) {
+        grid = prompt('Please enter a number smaller than 100.')
+    }
     mkGrid(grid,grid);
     const squares = document.querySelectorAll(".grid-square");
     squares.forEach(
