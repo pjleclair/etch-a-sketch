@@ -1,6 +1,6 @@
 .grid-square {
     background-color: cornflowerblue;
-    margin: 20px;
+    margin: 50px;
     padding: 10px;
 }
 
@@ -11,6 +11,7 @@
     align-items: center;
 }
 
-.hovered {
-    color: aliceblue;
+div.hovered {
+    background-color: aliceblue;
+    transform: scale(1.1);
 }

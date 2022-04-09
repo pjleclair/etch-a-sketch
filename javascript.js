@@ -10,14 +10,16 @@ function mkGrid (row,col) {
     }
 }
 
-function mOver () {
-    console.log('test');
-    this.classList.add('hovered');
+function mOver (e) {
+    this.classList.add("hovered");
 }
 
-function mOut () {
-    console.log('test');
-    this.classList.remove('hovered');
+function mOut (e) {
+    this.classList.remove("hovered");
+}
+
+function clicker (e) {
+    console.log(this.classList.value);
 }
 
 const container = document.querySelector(".container-div");
@@ -26,10 +28,14 @@ mkGrid(16,16);
 const squares = document.querySelectorAll(".grid-square");
 squares.forEach(
     function(currentValue, currentIndex, listObj) {
-        squares.item(currentIndex).addEventListener("onmouseover", mOver);
+        squares.item(currentIndex).addEventListener("mouseenter", mOver);
     });
 squares.forEach(
     function(currentValue, currentIndex, listObj) {
-        squares.item(currentIndex).addEventListener("onmouseout", mOut);
+        squares.item(currentIndex).addEventListener("mouseleave", mOut);
+    });
+squares.forEach(
+    function(currentValue, currentIndex, listObj) {
+        squares.item(currentIndex).addEventListener("click", clicker);
     });
 
