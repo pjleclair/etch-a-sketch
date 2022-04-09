@@ -1,5 +1,11 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .grid-square {
-    background-color: cornflowerblue;
+    background-color: aliceblue;
     margin: 50px;
     padding: 10px;
 }
@@ -11,7 +17,13 @@
     align-items: center;
 }
 
-div.hovered {
-    background-color: aliceblue;
-    transform: scale(1.1);
+.hovered {
+    background-color: black;
 }
+
+button {
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    padding: 10px;
+}
+

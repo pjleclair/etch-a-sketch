@@ -10,32 +10,58 @@ function mkGrid (row,col) {
     }
 }
 
+function wipeGrid (parentNode) {
+    let firstChild = parentNode[0];
+    while (parentNode.firstChild) {
+        parentNode.removeChild(parentNode.firstChild);
+    }
+}
+
+function runGame () {
+    if (games>0) {
+        const container = document.querySelector(".container-div");
+        wipeGrid(container);
+    }
+    const grid = prompt('How large would you like your grid?');
+    mkGrid(grid,grid);
+    const squares = document.querySelectorAll(".grid-square");
+    squares.forEach(
+        function(currentValue, currentIndex, listObj) {
+            squares.item(currentIndex).addEventListener("mouseenter", mOver);
+        });
+    /*squares.forEach(
+        function(currentValue, currentIndex, listObj) {
+            squares.item(currentIndex).addEventListener("mouseleave", mOut);
+        });*/
+    squares.forEach(
+        function(currentValue, currentIndex, listObj) {
+            squares.item(currentIndex).addEventListener("click", clicker);
+        });
+    games++;
+}
+
 function mOver (e) {
     this.classList.add("hovered");
 }
 
-function mOut (e) {
+/*function mOut (e) {
     this.classList.remove("hovered");
-}
+}*/
 
 function clicker (e) {
     console.log(this.classList.value);
 }
 
+let games = 0;
 const container = document.querySelector(".container-div");
-mkGrid(16,16);
+const body = document.querySelector("body");
+const button = document.createElement("button");
+button.innerHTML = 'Click here to start the game!';
+const buttonContainer = document.createElement("div");
+buttonContainer.classList.add('button-container');
+buttonContainer.appendChild(button);
+body.insertBefore(buttonContainer, container);
+button.addEventListener("click", runGame);
 
-const squares = document.querySelectorAll(".grid-square");
-squares.forEach(
-    function(currentValue, currentIndex, listObj) {
-        squares.item(currentIndex).addEventListener("mouseenter", mOver);
-    });
-squares.forEach(
-    function(currentValue, currentIndex, listObj) {
-        squares.item(currentIndex).addEventListener("mouseleave", mOut);
-    });
-squares.forEach(
-    function(currentValue, currentIndex, listObj) {
-        squares.item(currentIndex).addEventListener("click", clicker);
-    });
+
 
