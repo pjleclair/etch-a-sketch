@@ -1,8 +1,7 @@
 .grid-square {
     background-color: aliceblue;
-    margin: 10px;
     padding: 10px;
-    flex: 1 1 10px;
+    flex: 1 1 10%;
 }
 
 .button-container {
@@ -12,19 +11,15 @@
 }
 
 .container-div {
+    height: 1000px;
+    width: 1000px;
     margin-top: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
 }
 
 .gameBox {
-    height: 1000px;
-    width: 1000px;
-}
-
-.flexGameBox {
     display: flex;
     justify-content: center;
 }
