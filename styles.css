@@ -1,13 +1,14 @@
+.grid-square {
+    background-color: aliceblue;
+    margin: 10px;
+    padding: 10px;
+    flex: 1 1 10px;
+}
+
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.grid-square {
-    background-color: aliceblue;
-    margin: 15px;
-    padding: 15px;
 }
 
 .container-div {
@@ -15,6 +16,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.gameBox {
+    height: 1000px;
+    width: 1000px;
+}
+
+.flexGameBox {
+    display: flex;
+    justify-content: center;
 }
 
 .hovered {

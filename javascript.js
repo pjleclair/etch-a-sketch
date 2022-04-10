@@ -55,6 +55,10 @@ function clicker (e) {
 }
 
 let games = 0;
+const gameBox = document.createElement("div");
+const flexGameBox = document.createElement("div");
+gameBox.classList.add('gameBox');
+flexGameBox.classList.add('flexGameBox');
 const container = document.querySelector(".container-div");
 const body = document.querySelector("body");
 const button = document.createElement("button");
@@ -63,6 +67,10 @@ const buttonContainer = document.createElement("div");
 buttonContainer.classList.add('button-container');
 buttonContainer.appendChild(button);
 body.insertBefore(buttonContainer, container);
+body.insertBefore(gameBox, container);
+body.insertBefore(flexGameBox, gameBox);
+gameBox.appendChild(container);
+flexGameBox.appendChild(gameBox);
 button.addEventListener("click", runGame);
 
 
