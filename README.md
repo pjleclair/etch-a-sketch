@@ -1,2 +1,2 @@
 # etch-a-sketch
-Etch-a-Sketch in the DOM. The final project of Odin Project - Foundations.
+Etch-a-Sketch in the DOM. The penultimate project of Odin Project - Foundations.
