@@ -1,7 +1,7 @@
 .grid-square {
     background-color: aliceblue;
     padding: 10px;
-    flex: 1 1 10%;
+    flex: 0 1 10%;
 }
 
 .button-container {
